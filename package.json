@@ -1,4 +1,4 @@
-
+{
   "name": "project-fighting",
   "version": "1.0.0",
   "description": "Project 2",
@@ -24,4 +24,5 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.0"
-
+  }
+}
