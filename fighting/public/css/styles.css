@@ -1,0 +1,47 @@
+button.submit {
+  float: right;
+}
+
+form#exercise {
+  margin-top: 50px;
+}
+
+
+#exercise textarea {
+  resize: none;
+}
+
+.panel-heading button.delete,
+button.edit {
+  float: right;
+  margin: 5px;
+}
+
+
+
+.workout-container {
+  margin-top: 50px;
+}
+
+.workout-list {
+  margin-top: 25px;
+}
+
+.blog-container {
+  margin-top: 30px;
+}
+
+.blog {
+  margin-top: 30px;
+}
+
+
+#workout-name {
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+}
+
+.top-30 {
+  margin-top: 30px;
+}
