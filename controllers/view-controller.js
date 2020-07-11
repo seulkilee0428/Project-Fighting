@@ -28,6 +28,9 @@ router.get("/exercise", function (req, res) {
   res.render('exercise');
 });
 
+router.get("/list", function (req, res) {
+  res.render('list');
+});
 
 // helper for / and blog routes
 function renderBlog(req, res) {
