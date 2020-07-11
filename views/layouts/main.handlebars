@@ -3,14 +3,35 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Blog - Express</title>
   <!-- Latest compiled and minified CSS & JS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">Workout Tracker</p>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="home"><a href="/blog">HOME</a></li>
+        <li id="newExercise"><a href="/exercise">New Exercise</a></li>
+        <li id="manageExercise"><a href="/workouts">Manage workout</a></li>
+        <li id="listExercise"><a href="/list">Excercise List</a></li>
+      </ul>
+    </div>
+  </nav>
+
 </head>
+
 <body>
   {{{body}}}
-</body>
+
+  <div class="footer-padding"></div>
+  <div class="footer">
+    <p>Made with</p>
+  </div>
+  <script src="https://code.jquery.com/jquery.js"></script>
+
 </html>
