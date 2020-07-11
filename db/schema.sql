@@ -1,4 +1,4 @@
 -- Drops the workout if it exists currently --
-DROP DATABASE IF EXISTS workoutDB;
+DROP DATABASE IF EXISTS workoutdb;
 -- Creates the "workout" database --
-CREATE DATABASE workoutDB;
+CREATE DATABASE workoutdb;
