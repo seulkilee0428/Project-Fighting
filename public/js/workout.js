@@ -1,24 +1,20 @@
 $(document).ready(function () {
-    // Getting references to the name inout and workout container, as well as the table body
     var nameInput = $("#workout-name");
     var workoutList = $("tbody");
     var workoutContainer = $(".workout-container");
-    // Adding event listeners to the form to create a new object, and the button to delete
-    // an Workout
     $(document).on("submit", "#workout-form", handleWorkoutFormSubmit);
     $(document).on("click", ".delete-workout", handleDeleteButtonPress);
 
-    // Getting the intiial list of Workouts
+    // Getting the list of Workouts
     getWorkouts();
 
-    // A function to handle what happens when the form is submitted to create a new Workout
+    //  what happens when the form is submitted to create a new Workout
     function handleWorkoutFormSubmit(event) {
         event.preventDefault();
-        // Don't do anything if the name fields hasn't been filled out
+        //  do nothing if the plan fields hasn't been filled out
         if (!nameInput.val().trim().trim()) {
             return;
         }
-        // Calling the upsertWorkout function and passing in the value of the name input
         upsertWorkout({
             name: nameInput
                 .val()
@@ -26,26 +22,26 @@ $(document).ready(function () {
         });
     }
 
-    // A function for creating an workout. Calls getWorkouts upon completion
+    // create a workout
     function upsertWorkout(workoutData) {
         $.post("/api/workouts", workoutData)
             .then(getWorkouts);
     }
 
-    // Function for creating a new list row for workouts
+    // create a new list row for workouts
     function createWorkoutRow(workoutData) {
         console.log(workoutData);
         var newTr = $("<tr>");
         newTr.data("workout", workoutData);
         newTr.append("<td>" + workoutData.name + "</td>");
-        newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
-        newTr.append("<td><a href='/blog?workout_id=" + workoutData.id + "'>Go to Posts</a></td>");
-        newTr.append("<td><a href='/exercise?workout_id=" + workoutData.id + "'>Create a Post</a></td>");
+        // newTr.append("<td># of exercises each plan has</td>"); Future add-on feature
+        newTr.append("<td><a href='/blog?workout_id=" + workoutData.id + "'>Go to Exercises</a></td>");
+        newTr.append("<td><a href='/exercise?workout_id=" + workoutData.id + "'>Create an Exercise</a></td>");
         newTr.append("<td><a style='cursor:pointer;color:red' class='delete-workout'>Delete Workout</a></td>");
         return newTr;
     }
 
-    // Function for retrieving workouts and getting them ready to be rendered to the page
+    // show  workouts 
     function getWorkouts() {
         $.get("/api/workouts", function (data) {
             var rowsToAdd = [];
@@ -57,7 +53,7 @@ $(document).ready(function () {
         });
     }
 
-    // A function for rendering the list of workouts to the page
+    // list of workouts to the page
     function renderWorkoutList(rows) {
         workoutList.children().not(":last").remove();
         workoutContainer.children(".alert").remove();
@@ -74,7 +70,7 @@ $(document).ready(function () {
     function renderEmpty() {
         var alertDiv = $("<div>");
         alertDiv.addClass("alert alert-danger");
-        alertDiv.text("You must create an Workout before you can create a Post.");
+        alertDiv.text("You must create an Workout before you can create an Exercise.");
         workoutContainer.append(alertDiv);
     }
 

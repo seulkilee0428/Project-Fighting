@@ -1,10 +1,7 @@
 <div class="container">
     <div class="row top-30">
         <div class="col-md-2 col-sm-2">
-            <a class="btn btn-default" href="/blog">Go to Blog</a>
-        </div>
-        <div class="col-md-2 col-sm-2">
-            <a class="btn btn-default" href="/cms">New Post</a>
+            <a class="btn btn-default" href="/blog">Home</a>
         </div>
         <div class="col-md-2 col-sm-2">
             <a class="btn btn-default" href="/exercise">New Exercise</a>
@@ -13,27 +10,27 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="workout-container">
-                <h1>Workouts</h1>
+                <h1>Current Workouts</h1>
                 <table class="table table-striped">
                     <thead>
+                        <form id="workout-form">
+                            <td colspan="4">
+                                <input placeholder="Enter a name" id="workout-name" type="text" />
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-success">Create Workout</button>
+                            </td>
+                        </form>
                         <tr>
-                            <th>Name</th>
-                            <th># of Posts</th>
-                            <th>See Author's Posts</th>
-                            <th>New Post</th>
-                            <th>Delete Author</th>
+                            <th>Workout Plan</th>
+                            {{!-- <th># of Posts</th>  Future add-on feature --}}
+                            <th>View Workout Plan</th>
+                            <th>Add An Exercise</th>
+                            <th>Delete Workout</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr id="form-row">
-                            <form id="workout-form">
-                                <td colspan="4">
-                                    <input placeholder="Enter a name" id="workout-name" type="text" />
-                                </td>
-                                <td>
-                                    <button type="submit" class="btn btn-success">Create Workout</button>
-                                </td>
-                            </form>
                         </tr>
                     </tbody>
                 </table>
