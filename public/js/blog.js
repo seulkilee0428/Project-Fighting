@@ -1,42 +1,40 @@
 $(document).ready(function () {
-  /* global moment */
 
-  // blogContainer holds all of our posts
   var blogContainer = $(".blog-container");
-  var postCategorySelect = $("#category");
+  var exerciseCategorySelect = $("#category");
   // Click events for the edit and delete buttons
-  $(document).on("click", "button.delete", handlePostDelete);
-  $(document).on("click", "button.edit", handlePostEdit);
+  $(document).on("click", "button.delete", handleExerciseDelete);
+  $(document).on("click", "button.edit", handleExerciseEdit);
 
-  // This function does an API call to delete posts
-  function deletePost(id) {
+  // API call to delete exercises
+  function deleteExercise(id) {
     $.ajax({
       method: "DELETE",
       url: "/api/exercises/" + id
     })
       .then(function () {
-        alert('post deleted!');
-        $(`[data-post=${id}]`).remove();
+        alert('exercise deleted!');
+        $(`[data-exercise=${id}]`).remove();
       });
   }
 
-  // This function figures out which post we want to delete and then calls deletePost
-  function handlePostDelete() {
+  // exercise  to delete 
+  function handleExerciseDelete() {
     var id = $(this)
-      .closest('[data-post]')
-      .attr("data-post");
-    deletePost(id);
+      .closest('[data-exercise]')
+      .attr("data-exercise");
+    deleteExercise(id);
   }
 
-  // This function figures out which post we want to edit and takes it to the appropriate url
-  function handlePostEdit() {
+  // exercise  to edit 
+  function handleExerciseEdit() {
     var id = $(this)
-      .closest('[data-post]')
-      .attr("data-post");
-    window.location.href = "/exercise?post_id=" + id;
+      .closest('[data-exercise]')
+      .attr("data-exercise");
+    window.location.href = "/exercise?exercise_id=" + id;
   }
 
-  // This function displays a messgae when there are no posts
+  //displays a messgae when there are no exercises in plan 
   function displayEmpty(id) {
     var query = window.location.search;
     var partial = "";
@@ -46,7 +44,7 @@ $(document).ready(function () {
     blogContainer.empty();
     var messageh2 = $("<h2>");
     messageh2.css({ "text-align": "center", "margin-top": "50px" });
-    messageh2.html("No posts yet" + partial + ", navigate <a href='/exercise" + query +
+    messageh2.html("No exercises yet" + partial + ", navigate <a href='/exercise" + query +
       "'>here</a> in order to get started.");
     blogContainer.append(messageh2);
   }
