@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "Shsk0707",
     "database": "workoutdb",
     "host": "127.0.0.1",
     "dialect": "mysql"
