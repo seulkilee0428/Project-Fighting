@@ -42,10 +42,24 @@ app.use(viewController);
 app.use(workoutController);
 app.use(exerciseController);
 
+//quotes api call
+
+// const api_helper = require("./API_helper.js")
+
+// app.get('/', (req, res) => {
+//   api_helper.make_API_call('https://api.quotable.io/random')
+//     .then(response => {
+//       res.json(response)
+//     })
+//     .catch(error => {
+//       res.send(error)
+//     })
+// })
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function () {
   app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log("App listening on: http://localhost:" + PORT);
   });
 });

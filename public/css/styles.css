@@ -89,3 +89,15 @@ html {
 	font-size: 12px;
   color: #fff;
 }
+
+.well {
+  max-width: 500px;
+  border-radius: 10px;
+  transition: max-height 5s ease-out;
+  margin: 0 auto;
+  margin-top: 75px;
+  /*box-shadow: 0px 0px 50px 1px red !important;*/ }
+
+.quote {
+  font-size: 15px;
+  font-family: cursive; }

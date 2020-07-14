@@ -49,4 +49,20 @@ $(document).ready(function () {
     blogContainer.append(messageh2);
   }
 
+  randomQuote();
+
 });
+
+function randomQuote() {
+  $.ajax({
+    url: "https://api.quotable.io/random",
+    type: "GET",
+    success: function (data) {
+      $(".well").html(data.content + "<br>" + "-" + data.author).fadeIn();
+    },
+    error: function () {
+      alert("Cannot open URL.");
+    }
+  });
+}
+
