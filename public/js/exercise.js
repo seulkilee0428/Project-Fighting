@@ -48,7 +48,7 @@ $(document).ready(function () {
     // Submits a new exercise 
     function submitExercise(exercise) {
         $.post("/api/exercises", exercise, function () {
-            window.location.href = "/blog";
+            window.location.href = "/index";
         });
     }
 
@@ -112,7 +112,7 @@ $(document).ready(function () {
             data: exercise
         })
             .then(function () {
-                window.location.href = "/blog";
+                window.location.href = "/index";
             });
     }
 });
