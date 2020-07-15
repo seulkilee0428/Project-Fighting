@@ -31,6 +31,9 @@ router.get("/exercise", function (req, res) {
   res.render('exercise');
 });
 
+router.get("/list", function (req, res) {
+  res.render('list');
+});
 
 // helper for / and blog routes
 function renderBlog(req, res) {
@@ -42,7 +45,7 @@ function renderBlog(req, res) {
     where: query,
     include: [db.Workout]
   }).then(function (exercises) {
-    res.render('index', { exercises: exercises })
+    res.render('list', { exercises: exercises })
   });
 }
 
