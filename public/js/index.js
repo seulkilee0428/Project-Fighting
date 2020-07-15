@@ -13,7 +13,6 @@ $(document).ready(function () {
       url: "/api/exercises/" + id
     })
       .then(function () {
-        alert('exercise deleted!');
         $(`[data-exercise=${id}]`).remove();
       });
   }

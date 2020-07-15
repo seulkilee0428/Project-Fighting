@@ -16,13 +16,16 @@ const db = require("../models");
 
 
 
-router.get('/blog', renderBlog);
+router.get('/index', renderBlog);
 router.get('/', renderBlog);
 
+router.get('/list', renderBlog);
 
 router.get("/workouts", function (req, res) {
   res.render('workouts');
 });
+
+
 
 router.get("/exercise", function (req, res) {
   res.render('exercise');
@@ -39,7 +42,7 @@ function renderBlog(req, res) {
     where: query,
     include: [db.Workout]
   }).then(function (exercises) {
-    res.render('blog', { exercises: exercises })
+    res.render('index', { exercises: exercises })
   });
 }
 
