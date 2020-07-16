@@ -5,11 +5,7 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-const session = require("express-session");
 var bodyParser = require("body-parser");
-
-// Requiring passport as we've configured it
-const passport = require("./config/passport");
 
 // Sets up the Express App
 // =============================================================
@@ -22,19 +18,12 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
 // Static directory
 app.use(express.static("public"));
-
-// We need to use sessions to keep track of our user's login status
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
@@ -48,12 +37,24 @@ const viewController = require("./controllers/view-controller.js");
 const workoutController = require("./controllers/workout-controller.js");
 const exerciseController = require("./controllers/exercise-controller.js");
 
+
 app.use(viewController);
 app.use(workoutController);
 app.use(exerciseController);
 
-require("./controllers/login-controller.js")(app);
+//quotes api call
 
+// const api_helper = require("./API_helper.js")
+
+// app.get('/', (req, res) => {
+//   api_helper.make_API_call('https://api.quotable.io/random')
+//     .then(response => {
+//       res.json(response)
+//     })
+//     .catch(error => {
+//       res.send(error)
+//     })
+// })
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
