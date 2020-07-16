@@ -21,8 +21,15 @@
                     <h5 style="float: right; color: blue; margin-top: -10px;">Workout Plan: {{Workout.name}} </h5>
                 </div>
                 <div class="panel-body">
-                    <p>{{body}}</p>
+                    {{desc}}
+
+                    <h5>Steps: {{steps}}</h5>
+                    <h5 style="color:green">Tips {{tips}}</h5>
+                    <h5 style="color:red"> Warnings: {{warn}}</h5>
+                    <a href="{{videoUrl}}" target="_blank"> Watch {{title}} Video</a>
+
                 </div>
+
             </div>
             {{/each}}
         </div>

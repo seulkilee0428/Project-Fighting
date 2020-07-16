@@ -35,7 +35,7 @@ $(document).ready(function () {
         newTr.data("workout", workoutData);
         newTr.append("<td>" + workoutData.name + "</td>");
         // newTr.append("<td># of exercises each plan has</td>"); Future add-on feature
-        newTr.append("<td><a href='/blog?workout_id=" + workoutData.id + "'>Go to Exercises</a></td>");
+        newTr.append("<td><a href='/list?workout_id=" + workoutData.id + "'>Go to Exercises</a></td>");
         newTr.append("<td><a href='/exercise?workout_id=" + workoutData.id + "'>Create an Exercise</a></td>");
         newTr.append("<td><a style='cursor:pointer;color:red' class='delete-workout'>Delete Workout</a></td>");
         return newTr;

@@ -1,7 +1,15 @@
 $(document).ready(function () {
-    var bodyInput = $("#body");
+    var descInput = $("#desc");
     var titleInput = $("#title");
     var exerciseForm = $("#exercise");
+    var stepsInput = $("#steps");
+    var tipsInput = $("#tips");
+    var warnInput = $("#warn");
+    var videoUrlInput = $("#videoUrl");
+
+
+
+
 
     var workoutSelect = $("#workout");
     $(exerciseForm).on("submit", handleFormSubmit);
@@ -22,7 +30,7 @@ $(document).ready(function () {
     function handleFormSubmit(event) {
         event.preventDefault();
 
-        if (!titleInput.val().trim() || !bodyInput.val().trim() || !workoutSelect.val()) {
+        if (!titleInput.val().trim() || !descInput.val().trim() || !workoutSelect.val()) {
             return;
         }
 
@@ -30,9 +38,22 @@ $(document).ready(function () {
             title: titleInput
                 .val()
                 .trim(),
-            body: bodyInput
+            desc: descInput
                 .val()
                 .trim(),
+
+            steps: stepsInput
+                .val(),
+
+            tips: tipsInput
+                .val(),
+
+            warn: warnInput
+                .val(),
+
+            videoUrl: videoUrlInput
+                .val(),
+
             WorkoutId: workoutSelect.val()
         };
         //  updating an exercise or create a  new exercise
@@ -48,7 +69,7 @@ $(document).ready(function () {
     // Submits a new exercise 
     function submitExercise(exercise) {
         $.post("/api/exercises", exercise, function () {
-            window.location.href = "/index";
+            window.location.href = "/list";
         });
     }
 
@@ -69,7 +90,11 @@ $(document).ready(function () {
             if (data) {
                 console.log(data.WorkoutId || data.id)
                 titleInput.val(data.title);
-                bodyInput.val(data.body);
+                descInput.val(data.desc);
+                stepsInput.val(data.steps);
+                tipsInput.val(data.tips);
+                warnInput.val(data.warn);
+                videoUrlInput.val(data.videoUrl);
                 WorkoutId = data.WorkoutId || data.id;
                 updating = true;
             }
@@ -112,7 +137,7 @@ $(document).ready(function () {
             data: exercise
         })
             .then(function () {
-                window.location.href = "/index";
+                window.location.href = "/list";
             });
     }
 });

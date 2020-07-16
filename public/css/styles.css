@@ -2,6 +2,14 @@ button.submit {
   float: right;
 }
 
+.textadjust {
+  overflow: hidden; 
+  overflow-wrap: break-word; 
+  resize: auto; 
+  height: 34px;
+
+ }
+
 form#exercise {
   margin-top: 50px;
 }
@@ -100,4 +108,6 @@ html {
 
 .quote {
   font-size: 15px;
-  font-family: cursive; }
+  font-family: cursive;
+ }
+
