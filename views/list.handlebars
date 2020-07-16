@@ -1,5 +1,5 @@
 <div class="container ">
-    <h1>Current Exercises</h1>
+    <h1>All Exercises</h1>
 
     <div class="row">
         <div class="col-md-12 container">
@@ -14,7 +14,9 @@
                     <h5>Steps: {{steps}}</h5>
                     <h5 style="color:green">Tips {{tips}}</h5>
                     <h5 style="color:red"> Warnings: {{warn}}</h5>
-                    <a href="{{videoUrl}}" target="_blank"> Watch {{title}} Video</a>
+                    {{!-- <a href="{{videoUrl}}" target="_blank"> Watch {{title}} Video</a> --}}
+                    <a href="https://www.youtube.com/results?search_query={{title}}" target="_blank"> Watch {{title}}
+                        Video</a>
                     <br><br>
                 </div>
             </div>

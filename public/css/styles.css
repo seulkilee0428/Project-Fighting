@@ -153,3 +153,22 @@ html {
   content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
+
+
+
+.title {
+  position: center;
+  margin-left: 275px;
+}
+
+
+.subtitle {
+  position: center;
+  margin-left: 275px;
+}
+
+
+.btnHome {
+  position: center;
+  margin-left: 300px;
+}

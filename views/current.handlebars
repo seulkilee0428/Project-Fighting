@@ -1,40 +1,46 @@
-<div class="container blog">
-    <h1>Current Exercises</h1>
-    <div class="row">
-        {{!-- <div class="col-md-2 col-sm-2">
-      <a class="btn btn-default" href="/exercise">Add Exercise</a>
-    </div>
-    <div class="col-md-2 col-sm-2">
-      <a class="btn btn-default" href="/workouts">Manage Worrkouts </a>
-    </div> --}}
-    </div>
-    <div class="row">
-        <div class="col-md-6 blog-container">
-            {{#each exercises}}
-            <div class="panel panel-default" data-exercise="{{id}}">
-                <div class="panel-heading">
-                    <button class="delete btn btn-danger">x</button>
-                    <button class="edit btn btn-info">EDIT</button>
-                    <h2>{{title}}</h2>
-                    {{!-- <small>{{createdAt}}</small> --}}
-                    </h2>
-                    <h5 style="float: right; color: blue; margin-top: -10px;">Workout Plan: {{Workout.name}} </h5>
-                </div>
-                <div class="panel-body">
-                    {{desc}}
+<div class="container ">
 
+    <div class="row">
+        <div class="col-md-12 container">
+            {{exercises.Workout.name}}
+
+            {{#each exercises}}
+            <div class="panel-heading" data-exercise="{{id}}">
+                <button type="button" class="collapsible "> {{title}} </button>
+                <div class="content">
+                    <button class="delete btn btn-danger">x</button>
+                    <button class="edit btn btn-info">Update</button>
+                    <h5>Workout Plan: {{Workout.name}} </h5>
+                    <p>{{desc}}</p>
                     <h5>Steps: {{steps}}</h5>
                     <h5 style="color:green">Tips {{tips}}</h5>
                     <h5 style="color:red"> Warnings: {{warn}}</h5>
                     <a href="{{videoUrl}}" target="_blank"> Watch {{title}} Video</a>
-
+                    <br><br>
                 </div>
-
             </div>
             {{/each}}
+
         </div>
     </div>
 </div>
+{{exercises.Workout.name}}
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
 <!-- Custom Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
 <script src="js/list.js" type="text/javascript"></script>
