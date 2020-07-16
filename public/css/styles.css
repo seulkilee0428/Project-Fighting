@@ -111,3 +111,16 @@ html {
   font-family: cursive;
  }
 
+   
+.list-group-item {
+  line-height: 2.5;
+}
+
+.navbar-title {
+  color: #4a4a4a;
+}
+
+.navbar-title:hover {
+  text-decoration: none;
+  color: #4a4a4a;
+}
