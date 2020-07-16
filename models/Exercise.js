@@ -7,11 +7,32 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        body: {
+        desc: {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
+        },
+        steps: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            len: [1]
+        },
+        tips: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            len: [1]
+        },
+        warn: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            len: [1]
+        },
+        videoUrl: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+            len: [1]
         }
+
     });
 
     Exercise.associate = function (models) {

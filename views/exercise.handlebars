@@ -11,11 +11,40 @@
         <div class="col-md-6 col-md-offset-3">
             <form id="exercise">
                 <div class="form-group">
-                    <label for="title">Title:</label>
+                    <label for="title">Exercie Name:</label>
                     <input placeholder="Exercise name" type="text" class="form-control" id="title">
                     <br />
-                    <label for="body">Body:</label>
-                    <textarea placeholder="Exercise description" class="form-control" rows="10" id="body"></textarea>
+
+
+                    <label for="desc">Description:</label>
+                    <textarea class="form-control animated" type="text" name="description" id="desc"
+                        placeholder="Add description"
+                        style="overflow: hidden; overflow-wrap: break-word; resize: auto; height: 34px;"></textarea>
+
+                    <br />
+
+                    <label for="steps">Steps:</label>
+                    <textarea class="form-control animated" type="text" name="steps" id="steps" placeholder="Add Steps"
+                        style="overflow: hidden; overflow-wrap: break-word; resize: auto; height: 34px;"></textarea>
+                    <br />
+
+                    <label for="tips">Tips:</label>
+                    <textarea class="form-control animated" type="text" name="steps" id="tips" placeholder="Add Tips"
+                        style="overflow: hidden; overflow-wrap: break-word; resize: auto; height: 34px;"></textarea>
+                    <br />
+
+                    <label for="warn">Warnings:</label>
+
+                    <textarea class="form-control animated" type="text" name="steps" id="warn"
+                        placeholder="Add Warnings"
+                        style="overflow: hidden; overflow-wrap: break-word; resize: auto; height: 34px;"></textarea>
+                    <br />
+
+                    <label for="videoUrl">Video URL:</label>
+                    <input placeholder="Add video Url" type="text" class="form-control" id="videoUrl">
+                    <br />
+
+
                     <div class="form-group">
                         <label for="category">Select Workout:</label>
                         <select class="form-control" id="workout">
@@ -23,6 +52,7 @@
                     </div>
                     <br />
                     <button type="submit" class="btn btn-success submit">Submit</button>
+                    <br />
                 </div>
             </form>
         </div>
