@@ -97,20 +97,6 @@ html {
 	font-size: 12px;
   color: #fff;
 }
-
-.well {
-  max-width: 500px;
-  border-radius: 10px;
-  transition: max-height 5s ease-out;
-  margin: 0 auto;
-  margin-top: 75px;
-  /*box-shadow: 0px 0px 50px 1px red !important;*/ }
-
-.quote {
-  font-size: 15px;
-  font-family: cursive;
- }
-
    
 .list-group-item {
   line-height: 2.5;
@@ -123,4 +109,16 @@ html {
 .navbar-title:hover {
   text-decoration: none;
   color: #4a4a4a;
+}
+
+.logo{
+  max-width: 300px;
+  float: right;
+  position: relative;
+  margin-right: 10rem;
+  margin-bottom: 10rem;
+}
+
+#signupButton{
+  margin-left: 40px;
 }
