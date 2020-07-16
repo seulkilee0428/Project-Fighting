@@ -69,7 +69,7 @@ $(document).ready(function () {
     // Submits a new exercise 
     function submitExercise(exercise) {
         $.post("/api/exercises", exercise, function () {
-            window.location.href = "/list";
+            window.location.href = "/workouts";
         });
     }
 
@@ -137,7 +137,7 @@ $(document).ready(function () {
             data: exercise
         })
             .then(function () {
-                window.location.href = "/list";
+                window.location.href = "/workouts";
             });
     }
 });
