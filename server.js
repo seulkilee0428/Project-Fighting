@@ -42,19 +42,11 @@ app.use(viewController);
 app.use(workoutController);
 app.use(exerciseController);
 
-//quotes api call
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('Unhandled Rejection at:', promise, 'reason:', reason);
+  // Application specific logging, throwing an error, or other logic here
+});
 
-// const api_helper = require("./API_helper.js")
-
-// app.get('/', (req, res) => {
-//   api_helper.make_API_call('https://api.quotable.io/random')
-//     .then(response => {
-//       res.json(response)
-//     })
-//     .catch(error => {
-//       res.send(error)
-//     })
-// })
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
