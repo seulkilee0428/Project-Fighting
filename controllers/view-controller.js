@@ -23,7 +23,7 @@ router.get("/workouts", function (req, res) {
   res.render('workouts');
 });
 
-router.get("/", function (req, res) {
+router.get("/index", function (req, res) {
   res.render('index');
 });
 
