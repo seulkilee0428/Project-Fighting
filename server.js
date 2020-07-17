@@ -42,11 +42,6 @@ app.use(viewController);
 app.use(workoutController);
 app.use(exerciseController);
 
-process.on('unhandledRejection', (reason, promise) => {
-  console.log('Unhandled Rejection at:', promise, 'reason:', reason);
-  // Application specific logging, throwing an error, or other logic here
-});
-
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
