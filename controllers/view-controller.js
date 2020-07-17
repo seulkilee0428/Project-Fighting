@@ -15,10 +15,6 @@ const db = require("../models");
 // Each of the below routes just handles the HTML page that the user gets sent to.
 
 
-
-// router.get('/index', renderBlog);
-// router.get('/', renderBlog);
-
 router.get('/list', renderBlog);
 
 router.get('/current', renderCurrent);
@@ -31,6 +27,9 @@ router.get("/index", function (req, res) {
   res.render('index');
 });
 
+router.get("/", function (req, res) {
+  res.render('index');
+});
 
 router.get("/exercise", function (req, res) {
   res.render('exercise');
